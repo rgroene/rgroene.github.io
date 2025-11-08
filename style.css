@@ -4,6 +4,7 @@
 #main_table{
 	display: table;
 	width: 100%;
+	min-height: 100vh;
 }
 #title{
 	display: table-caption;
