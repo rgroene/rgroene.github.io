@@ -30,6 +30,9 @@
 	padding-left: 15px;
 	padding-top: 15px;
 }
+#bodytext h1{
+	font-size: 20px;
+}
 #portfolio_items li{
 	padding-bottom: 10px;
 }
