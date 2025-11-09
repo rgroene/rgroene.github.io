@@ -64,3 +64,6 @@
 #portfolio_items li{
 	padding-bottom: 10px;
 }
+#portfolio_items li ul{
+	padding-top: 10px;
+}
