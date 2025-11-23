@@ -61,6 +61,9 @@
 #bodytext h1{
 	font-size: 28px;
 }
+#bodytext h2{
+	font-size: 20px;
+}
 #portfolio_items li{
 	padding-bottom: 10px;
 }
