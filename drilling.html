@@ -1,0 +1,85 @@
+<head>
+	<title>Ryan Groene's Teacher Portfolio</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="jquery-3.7.1.min.js" />
+	<script>
+		const num_words = 3;
+		const num_boxes = 4;
+		let noms = [];
+		let gens = [];
+		let decl = [];
+		let index = Math.floor(Math.random() * num_words);
+		let num_correct = 0;
+		
+		//words
+		noms[0] = "puella"; gens[0] = "puell"; decl[0] = 1;
+		noms[1] = "servus"; gens[1] = "serv"; decl[1] = 2;
+		noms[1] = "pes"; gens[2] = "ped"; decl[2] = 3;
+		
+		//endings
+		let npl_ending = ["ae", "i", "es"]
+		let acs_ending = ["am", "um", "em"]
+		let acpl_ending = ["as", "os", "es"]
+
+	
+		//check work
+		if($('#btnCheck').click()){
+			let boxes_correct = 0;
+			
+			if($('#ns').val() == noms[index]){
+				boxes_correct++;
+			}
+			if($('#npl').val() == (gens[index] + npl_ending[decl[index]])){
+				boxes_correct++;
+			}
+			if($('#acs').val() == (gens[index] + acs_ending[decl[index]])){
+				boxes_correct++;
+			}
+			if($('#acpl').val() == (gens[index] + acpl_ending[decl[index]])){
+				boxes_correct++;
+			}
+			
+			if(boxes_correct == num_boxes){
+				num_correct++;
+				$('#feedback').val("Correct! Great work!");
+				$('#score').val(num_correct);
+			} else {
+				$('#feedback').val("Hmmm...that doesn't look quite right. Try again.");
+			}
+		}
+	</script>
+</head>
+<body>
+
+<table>
+	<tr>
+		<td></td>
+		<th>Singular</th>
+		<th>Plural</th>
+	</tr>
+	<tr>
+		<th>Nominative</th>
+		<td>
+			<input type="text" id="ns"></input>
+		</td>
+		<td>
+			<input type="text" id="npl"></input>
+		</td>
+	</tr>
+	<tr>
+		<th>Accusative</th>
+		<td>
+			<input type="text" id="acs"></input>
+		</td>
+		<td>
+			<input type="text" id="acpl"></input>
+		</td>
+	</tr>
+</table>
+<br />
+<input type="button" id="btnCheck">
+<span id="feedback"></span>
+Number correct: <span id="score">0</span>
+
+
+</body>
